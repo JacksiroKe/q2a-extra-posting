@@ -1,5 +1,5 @@
-# Q2A Extra Question Field Plugin
-Enhance your Extra Question field with file management. Add extra field on question: 
+# Q2A Extra Posting Plugin
+Enhance your Extra Posting with file management. Add extra field on question: 
  1. textbox.
  2. textarea.
  3. checkbox.
@@ -11,7 +11,7 @@ Enhance your Extra Question field with file management. Add extra field on quest
 Question2Answer v1.6 and later
 
 ## Installing Instructions
-If you have never installed my Q2A plugins before please consider checking the [Installation Guide](https://github.com/JacksiroKe/q2a-extra-question-field/blob/master/INSTALLING.md)
+If you have never installed my Q2A plugins before please consider checking the [Installation Guide](https://github.com/JacksiroKe/q2a-extra-posting/blob/master/INSTALLING.md)
 
 ## Options
 ### Extra field count:

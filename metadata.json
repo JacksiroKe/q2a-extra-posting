@@ -1,8 +1,8 @@
 {
-	"name": "Extra Question Field",
+	"name": "Extra Posting",
 	"description": "Add extra field(s) on the question form",
-	"version": "2.3",
-	"date": "2015-02-04",
+	"version": "0.1",
+	"date": "2020-07-05",
 	"author": "JacksiroKe",
 	"author_uri": "https://github.com/JacksiroKe",
 	"license": "GPLv2",

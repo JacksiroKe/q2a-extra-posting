@@ -1,12 +1,21 @@
 <?php
+
+/*
+	Extra Posting
+	https://github.com/JacksiroKe
+	Add extra postingfield(s) on the question form
+	
+*/
+
 if (!defined('QA_VERSION')) { // don't allow this page to be requested directly from browser
 	header('Location: ../../');
 	exit;
 }
-require_once QA_INCLUDE_DIR.'qa-db-metas.php';
-require_once QA_PLUGIN_DIR.'q2a-extra-question-field/qa-eqf.php';
 
-class qa_eqf_event {
+require_once QA_INCLUDE_DIR.'qa-db-metas.php';
+require_once QA_PLUGIN_DIR.'q2a-extra-posting/extra-posting.php';
+
+class extra_posting_event {
 
 	function process_event ($event, $userid, $handle, $cookieid, $params) {
 		global $qa_extra_question_fields;
@@ -14,9 +23,9 @@ class qa_eqf_event {
 		case 'q_queue':
 		case 'q_post':
 		case 'q_edit':
-			for($key=1; $key<=qa_eqf::field_count_max; $key++) {
-				if((bool)qa_opt(qa_eqf::field_active.$key)) {
-					$name = qa_eqf::field_base_name.$key;
+			for($key=1; $key<=extra_posting::field_count_max; $key++) {
+				if((bool)qa_opt(extra_posting::field_active.$key)) {
+					$name = extra_posting::field_base_name.$key;
 					if(isset($qa_extra_question_fields[$name]))
 						$content = qa_sanitize_html($qa_extra_question_fields[$name]['value']);
 					else
@@ -28,9 +37,9 @@ class qa_eqf_event {
 			}
 			break;
 		case 'q_delete':
-			for($key=1; $key<=qa_eqf::field_count_max; $key++) {
-				if((bool)qa_opt(qa_eqf::field_active.$key)) {
-					$name = qa_eqf::field_base_name.$key;
+			for($key=1; $key<=extra_posting::field_count_max; $key++) {
+				if((bool)qa_opt(extra_posting::field_active.$key)) {
+					$name = extra_posting::field_base_name.$key;
 					qa_db_postmeta_clear($params['postid'], 'qa_q_'.$name);
 				}
 			}
